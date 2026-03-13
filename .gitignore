@@ -1,0 +1,74 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+
+# Environment & secrets
+.env
+.env.*.local
+.env.local
+.env.* 
+.env.production
+.env.development
+.env.test
+.envrc
+# local npm credentials
+.npmrc
+.yarnrc
+
+# Service account / credentials
+*.service-account.json
+*-credentials.json
+credentials.json
+google-services.json
+firebase-service-account.json
+
+# Keys & certs
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+*.jks
+*.p8
+
+# Build / cache / coverage
+build/
+out/
+.cache/
+.cache-loader/
+.next/
+.parcel-cache/
+dist/
+coverage/
+.vite/
+dist-ssr/
+*.local
+
+# Misc
+node_modules/
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/extensions.json
