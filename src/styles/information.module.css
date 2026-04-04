@@ -19,19 +19,17 @@
 }
 h2{
     color: #d4af37;
-    margin-bottom: 15px;
-    font-weight: 400;
-    letter-spacing: 1px;
-    font-family: 'Georgia', serif;
+    margin-bottom: 10px;
     font-weight: bold;
+    font-size: 2.3rem;
+    letter-spacing: 1px;
     text-underline-offset: 8px;
 }
 
 .brochureSection p{
     color: #0f1419;
-    margin: 30px 0;
+    margin: 20px 0px 40px 0px;
     line-height: 1.7;
-    font-size: 1.05rem;
 }
 
 a{

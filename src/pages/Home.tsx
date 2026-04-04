@@ -1,6 +1,7 @@
 import styles from '../styles/home.module.css';
 import { Link } from 'react-router-dom';
 import Footer from '../components/Footer';
+import GhanaImage from '../components/GhanaImage';
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
               <div className={styles.name}>
                 Madam Felicia Yaa Akromuah
               </div>
+              <GhanaImage className={styles.pageSymbol} alt="memorial symbol" />
               <div className={styles.quote}>
                 <em>"A gentle soul who touched countless lives with kindness, grace, and unwavering love."</em> 
               </div>

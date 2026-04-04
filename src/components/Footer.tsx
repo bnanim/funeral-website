@@ -1,11 +1,16 @@
 import styles from '../styles/footer.module.css';
 import { Link } from 'react-router-dom';
+import GhanaImage from './GhanaImage';
+
 const Footer = () => {
 
   return (
     <>
         <footer className={styles.footer}>
-            <p className={styles.name}>Yaa Felicia Akromuah</p>
+            <div className={styles.brandFooter}>
+                <GhanaImage className={styles.symbol} alt="memorial symbol" />
+                <p className={styles.name}>Yaa Felicia Akromuah</p>
+            </div>
             <div className={styles.footerContent}>
                 <div className={styles.quickLinks}>
                     <h3>Quick Links</h3>

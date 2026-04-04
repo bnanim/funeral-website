@@ -1,51 +1,17 @@
-form{
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    width: 90%;
-    margin: 20px auto;
-}
+
 .tributesContainer h2{
     font-weight: bold;
     color: #d4af37;
     margin-bottom: 15px;
-    font-size: 2.3rem;;
-    letter-spacing: 1px;
-    font-family: 'Georgia', serif;
+    font-size: 2.3rem;
 }
 
-input{
-    width: 100%;
-    max-width: 500px;
-    height: 30px;
-    padding: 20px;
-    border: 1px solid #d4af37;
-    border-radius: 8px;
-    color: rgba(0, 27, 52, 0.916);
-}
-textarea{
-    width: 100%;
-    max-width: 500px;
-    height: 100px;
-    padding: 20px;
-    border: 1px solid #d4af37;
-    border-radius: 8px;
-    color: rgba(0, 27, 52, 0.916);
-}
-button{
-    width: 100%;
-    max-width: 500px;
-    padding: 12px;
-    background-color: #d4af37;
-    color: #0f1419;
-    cursor: pointer;
-    font-weight: normal;
-    border-radius: 8px;
-    transition: all 0.3s;
-}
-button:hover{
-    background-color: #0f1419;
-    color: #fffdfe;
+.pageSymbol{
+    width: 36px;
+    height: 36px;
+    margin-left: 12px;
+    object-fit: contain;
+    color: #d4af37;
 }
 
 .profileIcon{
@@ -58,7 +24,7 @@ button:hover{
 .heading h2{
     width: 90%;
     margin: 0 auto;
-    margin-top: 100px;
+    margin-top: 40px;
 }
 .tributeHeader{
     display: flex;

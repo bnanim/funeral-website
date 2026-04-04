@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import styles from '../styles/navbar.module.css';
 import { Link } from 'react-router-dom';
+import GhanaImage from './GhanaImage';
 
 function Navbar() {
 
@@ -15,7 +16,10 @@ function Navbar() {
         <>
              <nav className={styles.navbar}>
                 <div className={styles.navContainer}>
-                    <h1>Memorial</h1>
+                    <div className={styles.brand}>
+                        <GhanaImage className={styles.symbol} alt="memorial symbol" />
+                        <h1>Memorial</h1>
+                    </div>
 
                     <div className={styles.burger} onClick = {handleClick}>
                         <div className={styles.line1}></div>
