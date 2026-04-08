@@ -1,7 +1,7 @@
 import Footer from '../components/Footer';
 import styles from '../styles/tributes.module.css';
 import { CgProfile } from "react-icons/cg";
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -44,9 +44,90 @@ const Tributes = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    adaptiveHeight: true,
+    autoplay: true,
+    autoplaySpeed: 4000,
+    pauseOnHover: true,
+    pauseOnDotsHover: true,
+    // afterChange will be set below once updateDotsPosition is defined
   };
   
   const [expandedIds, setExpandedIds] = useState<Array<string | number>>([]);
+  const sliderRef = useRef<unknown>(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
+
+  // update dots position to sit under the active slide
+  const updateDotsPosition = () => {
+    if (!containerRef.current) return;
+    const container = containerRef.current;
+    const dots = container.querySelector('.slick-dots') as HTMLElement | null;
+    if (!dots) return;
+    // find the active slide (slick-active inside this container)
+    const active = container.querySelector('.slick-slide.slick-active') as HTMLElement | null;
+    if (!active) {
+      // fallback: place dots at bottom of container
+      dots.style.position = 'absolute';
+      dots.style.left = '50%';
+      dots.style.transform = 'translateX(-50%)';
+      dots.style.top = (container.clientHeight - dots.clientHeight - 12) + 'px';
+      return;
+    }
+    // compute position relative to container
+    const activeRect = active.getBoundingClientRect();
+    const containerRect = container.getBoundingClientRect();
+    const top = activeRect.top - containerRect.top + activeRect.height + 12; // 12px gap
+    dots.style.position = 'absolute';
+    dots.style.left = '50%';
+    dots.style.transform = 'translateX(-50%)';
+    dots.style.top = `${top}px`;
+  };
+
+  useEffect(() => {
+    if (!containerRef.current) return;
+    const node = containerRef.current;
+    const obs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const inView = entry.isIntersecting;
+          const s = sliderRef.current as { slickPause?: () => void; slickPlay?: () => void } | null;
+          if (s && typeof s.slickPause === 'function' && typeof s.slickPlay === 'function') {
+            if (!inView) s.slickPause();
+            else s.slickPlay();
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+    obs.observe(node);
+    // ensure dots positioned initially
+    setTimeout(() => updateDotsPosition(), 50);
+    return () => obs.disconnect();
+  }, []);
+
+  // reposition when expandedIds change (a card expands/collapses)
+  useEffect(() => {
+    // small delay to allow layout changes
+    const t = setTimeout(() => updateDotsPosition(), 120);
+    return () => clearTimeout(t);
+  }, [expandedIds]);
+
+  // pause autoplay when any card is expanded; resume when none are expanded
+  useEffect(() => {
+    const s = sliderRef.current as { slickPause?: () => void; slickPlay?: () => void } | null;
+    if (!s) return;
+    if (expandedIds.length > 0) {
+      if (typeof s.slickPause === 'function') s.slickPause();
+    } else {
+      if (typeof s.slickPlay === 'function') s.slickPlay();
+    }
+  }, [expandedIds]);
+
+  // reposition on window resize
+  useEffect(() => {
+    const onResize = () => updateDotsPosition();
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, []);
 
   const toggleExpanded = (id: string | number) => {
     setExpandedIds((prev) => {
@@ -55,7 +136,8 @@ const Tributes = () => {
     });
   };
 
-  const truncate = (s: string, n = 420) => (s.length > n ? s.slice(0, n).trimEnd() + '...' : s);
+  // increase default truncate length to show more characters before "Read more"
+  const truncate = (s: string, n = 800) => (s.length > n ? s.slice(0, n).trimEnd() + '...' : s);
  
 
   return (
@@ -65,9 +147,18 @@ const Tributes = () => {
             <div className={styles.heading}>
               <h2>Tributes</h2>
             </div>
-            <div className={styles.tributeList}>
+            <div className={styles.tributeList} ref={containerRef}>
 
-              <Slider {...settings}>
+              <Slider
+                ref={(c) => { sliderRef.current = c; }}
+                afterChange={() => {
+                  // auto-collapse any expanded cards when slide changes
+                  setExpandedIds([]);
+                  // reposition dots under the newly active slide
+                  updateDotsPosition();
+                }}
+                {...settings}
+              >
               {tributes.map((t) => (
                 <div key={t.id} className={`${styles.tributeCard} reveal card-hover`}>
                   <div className={styles.tributeHeader}>

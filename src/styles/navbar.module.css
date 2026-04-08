@@ -7,7 +7,7 @@ nav{
     justify-content: center;
     top: 0;
     z-index: 1000;
-    width: 100vw;
+    width: 100%;
     border-bottom: 1px solid #2a3d52;
 }
 .navContainer{

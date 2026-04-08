@@ -5,6 +5,16 @@
     font-family: Montserrat, Verdana, Geneva, Tahoma, sans-serif;
 }
 
+/* Slightly smaller base font for improved fit */
+html, body {
+    font-size: 15px;
+}
+
+/* Prevent accidental horizontal scroll caused by transforms or images */
+html, body {
+    overflow-x: hidden;
+}
+
 /* Masked PNG utility: apply this plus a size class (e.g. .symbol) to recolor the PNG */
 .ghana-image-mask{
     display: inline-block;

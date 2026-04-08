@@ -11,7 +11,7 @@ const Information = () => {
         <div className={styles.brochureSection}>
           <h2>Funeral Brochure</h2>
           <p>Download the funeral brochure for Madam Felicia Akromuah to learn more about her life, achievements, and the funeral arrangements.</p>
-          <a href="../public/assets/BROCHURE.pdf" download>Download Brochure</a>
+          <a href="/assets/BROCHURE.pdf" download>Download Brochure</a>
         </div>
 
     {/* Donations Section -------------------------------*/}

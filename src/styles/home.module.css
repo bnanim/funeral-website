@@ -7,7 +7,7 @@
 }
 .homeContainer img{
     margin-top: 10px;
-    width: 100vw;
+    width: 100%;
     scale: 1.1;
     object-fit: cover;
     opacity: 0.8;
@@ -69,8 +69,9 @@
     object-fit: cover;
     position: absolute;
     /* top: 50%; */
-    left: 0%;
-    transform: translate(-400%, -700%);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 .links{
     display: flex;
