@@ -5,6 +5,8 @@ import GhanaImage from './GhanaImage';
 const Footer = () => {
 
   return (
+
+
     <>
         <footer className={styles.footer}>
             <div className={styles.brandFooter}>

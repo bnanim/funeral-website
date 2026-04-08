@@ -57,12 +57,12 @@ footer{
    color: #b8b8b8c1;
 }
 .brandFooter{
-    display: flex;
     align-items: center;
 }
 .symbol{
-    width: 100px;
+    width: 1000px;
     object-fit: contain;
     height: 100px;
     color: #d4af37; /* site gold for mask */
 }
+

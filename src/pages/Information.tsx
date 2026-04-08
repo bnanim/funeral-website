@@ -6,11 +6,12 @@ const Information = () => {
   return (
     <>
       <div className={styles.informationContainer}>
+        <img src="https://res.cloudinary.com/dnyka5nyc/image/upload/v1775525117/information_j1w7mv.jpg" alt="" />
     {/* Brochure Section -------------------------------*/}
         <div className={styles.brochureSection}>
           <h2>Funeral Brochure</h2>
           <p>Download the funeral brochure for Madam Felicia Akromuah to learn more about her life, achievements, and the funeral arrangements.</p>
-          <a href="/brochure.pdf" download>Download Brochure</a>
+          <a href="../public/assets/BROCHURE.pdf" download>Download Brochure</a>
         </div>
 
     {/* Donations Section -------------------------------*/}

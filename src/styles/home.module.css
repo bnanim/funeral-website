@@ -5,6 +5,13 @@
     background-image: radial-gradient(circle, rgba(0, 0, 0, 0.062) 1px, transparent 1px);
     background-size: 30px 20px;
 }
+.homeContainer img{
+    margin-top: 10px;
+    width: 100vw;
+    scale: 1.1;
+    object-fit: cover;
+    opacity: 0.8;
+}
 .heroSection{
    display: flex;
     flex-direction: column;
@@ -63,7 +70,7 @@
     position: absolute;
     /* top: 50%; */
     left: 0%;
-    transform: translate(-50%, -50%);
+    transform: translate(-400%, -700%);
 }
 .links{
     display: flex;

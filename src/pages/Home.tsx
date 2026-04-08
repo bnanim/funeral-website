@@ -7,7 +7,8 @@ const Home = () => {
   return (
     <>
         <div className={styles.homeContainer}>
-            <div className={`${styles.heroSection} reveal`}> 
+            <img src="https://res.cloudinary.com/dnyka5nyc/image/upload/v1775525113/home_yfxpo4.jpg" alt="" />
+            <div className={`${styles.heroSection} reveal`}>
               <div className={styles.year}>
                 1920 - 2024
               </div>
@@ -25,7 +26,7 @@ const Home = () => {
                 Beloved mother, grandmother, and friend
               </div>
               <div className={`${styles.image} reveal card-hover`}>
-                <img src="https://res.cloudinary.com/dnyka5nyc/image/upload/v1773148863/samples/people/smiling-man.jpg" alt="Grandma Felicia" />
+                <img src="https://res.cloudinary.com/dnyka5nyc/image/upload/v1775529333/acopy_nnzaft.jpg" alt="Grandma Felicia" />
               </div>
             </div>
             <div className={`${styles.links} reveal`}> 
