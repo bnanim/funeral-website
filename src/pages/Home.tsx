@@ -21,9 +21,6 @@ const Home = () => {
               </div>
 
               </div>
-              <div className={`${styles.txt} reveal`}>
-                Beloved mother, grandmother, and friend
-              </div>
               
             </div>
             <div className={`${styles.links} reveal`}> 
