@@ -86,14 +86,13 @@
 }
 .link{
     text-decoration: none;
-    background-color: #d4af37;
-    color: #0f1425;
+    background-color: #0f1425;
+    color: #d4af37;
     padding: 10px 20px;
-    border-radius: 8px;
 }
 .link:hover{
-    background-color: #0f1419;
-    color: #fffdfe;
+    background-color: #d4af37;
+    color: #0f1419;
 }
 .quoteCard{
     width: 90%;

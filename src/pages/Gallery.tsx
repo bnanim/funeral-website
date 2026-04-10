@@ -229,7 +229,6 @@ const Gallery = () => {
           {/*GENERAL PICTURES */}
         <div data-reveal-stagger="90" className={styles.grandmaOnly + ' ' + styles.section}>
           <h1>Gallery</h1>
-          <h2>A Wife, Mom and Friend</h2>
             {general.map( img => ( 
             <div key={img} className={`${styles.picBoxG} reveal card-hover`}>
               <img className={isClicked ? styles.clicked : ''} onClick={handleClick} src={img} alt="image" />

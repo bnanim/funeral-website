@@ -72,7 +72,6 @@ a:hover{
 .donationCardMomo{
     background: linear-gradient(135deg, #d4af37, #f2d268);
     padding: 30px;
-    border-radius: 16px;
     flex: 1 1 200px;
     display: flex;
     flex-direction: column;

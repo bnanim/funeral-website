@@ -11,18 +11,20 @@ function Navbar() {
     const handleSelected = () => {
         setIsClicked(false);
     }
+
     return (
         <>
              <nav className={styles.navbar}>
                 <div className={styles.navContainer}>
                     <div className={styles.brand}>
-                        <h1>Memorial</h1>
+                        <Link to={'/'} className='logo'>Memorial</Link>
                     </div>
 
                     <div className={styles.burger} onClick = {handleClick}>
-                        <div className={styles.line1}></div>
-                        <div className={styles.line2}></div>
-                        <div className={styles.line3}></div>
+                        <div className={isClicked ? styles.line1C : styles.line1}></div>
+                        <div className={isClicked ? styles.line12C : styles.line12}></div>
+                        <div className={isClicked ? styles.line2C : styles.line2}></div>
+                        <div className={isClicked ? styles.line3C : styles.line3}></div> 
                     </div>
                     {isClicked && (
                     <div className={styles.navLinks}>

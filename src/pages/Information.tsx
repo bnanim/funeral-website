@@ -1,12 +1,11 @@
 import {FaMoneyBillWave} from 'react-icons/fa';
-import {FaUniversity} from 'react-icons/fa';
 import styles from '../styles/information.module.css';
 import Footer from '../components/Footer';
 const Information = () => {
   return (
     <>
       <div className={styles.informationContainer}>
-        <img src="https://res.cloudinary.com/dnyka5nyc/image/upload/v1775525117/information_j1w7mv.jpg" alt="" />
+        <img className="reveal" src="https://res.cloudinary.com/dnyka5nyc/image/upload/v1775525117/information_j1w7mv.jpg" alt="" />
     {/* Brochure Section -------------------------------*/}
         <div className={styles.brochureSection}>
           <h2>Funeral Brochure</h2>
@@ -25,16 +24,8 @@ const Information = () => {
                   <FaMoneyBillWave className={styles.mobileIcon} />
                   <h3>Mobile Money</h3>
                 </div>
-                <p>Account Name: John Doe</p>
-                <p>Number: <strong>+233 123 456 789</strong></p>
-              </div>
-              <div className={`${styles.donationCardBank} ${styles.card}`}>
-                <div className={styles.heading}>
-                  <FaUniversity className={styles.bankIcon} />
-                  <h3>Bank Transfer</h3>
-                </div>
-                <p>Account Name: John Doe</p>
-                <p>Account Number: <strong>4889 233 123 456 789</strong></p>
+                <p>Account Name: SAMUEL BOATENG OTENG</p>
+                <p>Number: <strong>0243 234 241</strong></p>
               </div>
             </div>
           </div>
@@ -45,8 +36,7 @@ const Information = () => {
           <h2>Contact Information</h2>
           <p>If you have any questions or would like to send your condolences, please feel free to reach out to the family.</p><br />
           <div className={styles.contactDetails}>
-            <p>Email: family@example.com</p>
-            <p>Phone: +233123456789</p>
+            <p>Phone: +233 243 234 241</p>
           </div>
         </div>
       </div>

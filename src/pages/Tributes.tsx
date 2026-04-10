@@ -54,6 +54,13 @@ const Tributes = () => {
   
   const [expandedIds, setExpandedIds] = useState<Array<string | number>>([]);
   const sliderRef = useRef<unknown>(null);
+  const skipBeforeRef = useRef(false);
+
+  type SliderApi = {
+    slickPause?: () => void;
+    slickPlay?: () => void;
+    slickGoTo?: (index: number) => void;
+  };
   const containerRef = useRef<HTMLDivElement | null>(null);
 
   // update dots position to sit under the active slide
@@ -151,6 +158,22 @@ const Tributes = () => {
 
               <Slider
                 ref={(c) => { sliderRef.current = c; }}
+                beforeChange={(oldIndex /*, newIndex */) => {
+                  // if a card is expanded, prevent navigation and stay on the current slide
+                  if (skipBeforeRef.current) {
+                    // this call was programmatic to revert navigation; ignore
+                    skipBeforeRef.current = false;
+                    return;
+                  }
+                  if (expandedIds.length > 0) {
+                    const s = sliderRef.current as SliderApi | null;
+                    if (s && typeof s.slickGoTo === 'function') {
+                      // programmatically go back to the old index to cancel the navigation
+                      skipBeforeRef.current = true;
+                      s.slickGoTo(oldIndex);
+                    }
+                  }
+                }}
                 afterChange={() => {
                   // auto-collapse any expanded cards when slide changes
                   setExpandedIds([]);

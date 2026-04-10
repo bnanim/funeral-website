@@ -49,6 +49,31 @@
   to{ opacity: 1; }
 }
 
+/* Page-level subtle transitions */
+.page-enter {
+  opacity: 0;
+  transform: translateY(8px);
+}
+.page-enter.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 360ms var(--reveal-ease), transform 360ms var(--reveal-ease);
+}
+
+/* smooth dot movement */
+.slick-dots {
+  transition: top 260ms var(--reveal-ease), transform 260ms var(--reveal-ease);
+}
+
+/* small scale-up for hero symbol */
+.pageSymbol{
+  transition: transform 420ms var(--reveal-ease), opacity 420ms var(--reveal-ease);
+}
+.pageSymbol.reveal--visible{
+  transform: scale(1.02);
+  opacity: 1;
+}
+
 /* Reveal image subtle scale for gallery */
 .reveal img{
   transform: scale(0.98);

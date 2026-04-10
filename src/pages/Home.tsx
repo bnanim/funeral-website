@@ -10,24 +10,21 @@ const Home = () => {
             <img src="https://res.cloudinary.com/dnyka5nyc/image/upload/v1775525113/home_yfxpo4.jpg" alt="" />
             <div className={`${styles.heroSection} reveal`}>
               <div className={styles.year}>
-                1920 - 2024
+                1933 - 2025
               </div>
               <div className={styles.name}>
                 Madam Felicia Yaa Akromuah
               </div>
-              <GhanaImage className={styles.pageSymbol} alt="memorial symbol" />
+              <GhanaImage className={`${styles.pageSymbol} reveal`} alt="memorial symbol" />
               <div className={styles.quote}>
                 <em>"A gentle soul who touched countless lives with kindness, grace, and unwavering love."</em> 
               </div>
-              <div className={styles.cuteLine + ' underline-anim'}>
 
               </div>
               <div className={`${styles.txt} reveal`}>
                 Beloved mother, grandmother, and friend
               </div>
-              <div className={`${styles.image} reveal card-hover`}>
-                <img src="https://res.cloudinary.com/dnyka5nyc/image/upload/v1775529333/acopy_nnzaft.jpg" alt="Grandma Felicia" />
-              </div>
+              
             </div>
             <div className={`${styles.links} reveal`}> 
               <Link to={'/gallery'} className={styles.link}>
@@ -43,7 +40,6 @@ const Home = () => {
             <div className={`${styles.quote} ${styles.quoteCard} reveal`}> 
               "Those we love don't go away, they walk beside us every day. Unseen, unheard, but always near, still loved, still missed, and very dear."
             </div>
-        </div>
         <Footer /> 
     </>
   )

@@ -19,17 +19,6 @@ nav{
     align-items: center;
 }
 
-.brand{
-    display: flex;
-    align-items: center;
-    width: 200px;
-}
-.symbol{
-    width: 100px;
-    height: 100px;
-    object-fit: contain;
-    color: #d4af37;
-}
 h1{
     font-size: 2rem;
     color: #e8dcc4;
@@ -45,25 +34,49 @@ h1{
     cursor: pointer;
     height: 20px;
     width: 30px;
+    overflow: hidden;
+    transition: ease 0.3s;
 }
 .burger .line1{
     height: 2px;
     width: 100%;
-    background-color: #e8dcc4;
-    border-radius: 5px;
+    background-color: #d4af37;
+    transition: ease 0.3s;
+}
+.burger .line1C{
+    height: 2px;
+    width: 100%;
+    background-color: #d4af37;
+    transform: rotate(-45deg);
+    transition: ease 0.3s;
+}
+.burger .line12{
+    height: 2px;
+    width: 100%;
+    background-color: #d4af37;
+    display: none;
+    transition: ease 0.3s;
+}
+.burger .line12C{
+    height: 2px;
+    width: 100%;
+    background-color: #d4af37;
+    display: block;
+    transform: rotate(45deg);
+    transition: ease 0.3s;
 }
 .burger .line2{
     height: 2px;
     width: 100%;
-    background-color: #e8dcc4;
-    border-radius: 5px;
+    background-color: #d4af37;
     margin: 4px 0;
+    transition: ease 0.3s;
 }
 .burger .line3{
     height: 2px;
     width: 100%;
-    background-color: #e8dcc4;
-    border-radius: 5px;
+    background-color: #d4af37;
+    transition: ease 0.3s;
 }
 .navLinks{
     position: absolute;
@@ -78,6 +91,7 @@ h1{
     gap: 1rem;
     z-index: 1001;
     border-left: 1px solid #2a3d52;
+    transition: all 0.3s ease;
 }
 .navLinks a{
     text-decoration: none;
@@ -94,6 +108,13 @@ h1{
     transition: background-color 0.3s;
 }
 .navLinks a:active{
-    background-color: #2a3d52;
+    background-color: #d4af37;
+    color: #0f1419;
     font-weight: normal;
+}
+.brand a{
+    background-color: #0f1419;
+    color:#d4af37;
+    font-size: 1.8rem;
+    padding: 0;
 }

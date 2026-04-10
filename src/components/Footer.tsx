@@ -24,8 +24,7 @@ const Footer = () => {
                 </div>
                 <div className={styles.contact}>
                     <h3>Contact Us</h3><br />
-                    <p>Email: yaa.felicia@gmail.com</p><br />
-                    <p>Phone: +233 123 456 789</p>
+                    <p>Phone: +233 243 234 241</p>
                 </div>
             </div>
             <p className={styles.copyright}>&copy; 2026 Yaa Felicia's funeral. All rights reserved.</p>

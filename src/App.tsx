@@ -15,6 +15,10 @@ function App() {
 
   useEffect(() => {
     // Re-init reveal whenever the route (location.pathname) changes
+    // scroll to top on route change so Link navigation lands at page top
+    if (typeof window !== 'undefined' && typeof window.scrollTo === 'function') {
+      window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+    }
     const cleanup = initReveal();
     return () => cleanup && cleanup();
   }, [location.pathname]);
